@@ -31,14 +31,20 @@ public class Maps {
 		return flag;
 	}
 
-	//smallest and largest key in java
+	// smallest and largest key in java
 	public void keySize() {
 		Map<Integer, String> map = initialiseMap();
-		
+		int smallestKey = map.keySet().stream().min(Integer::compareTo).get();
+		int largestKey = map.keySet().stream().max(Integer::compareTo).get();
+		System.out.println(smallestKey);
+		System.out.println(largestKey);
+
 	}
+
 	public static void main(String[] args) {
 		Maps map = new Maps();
 		map.deleteElements();
+		map.keySize();
 	}
 
 }
